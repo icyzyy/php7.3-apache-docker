@@ -18,4 +18,6 @@ COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf
 EXPOSE 80
 EXPOSE 8080
 
+RUN a2enmod rewrite
+
 CMD /etc/init.d/apache2 start && tail -f /var/log/apache2/access.log
